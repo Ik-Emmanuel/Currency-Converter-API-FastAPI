@@ -23,6 +23,8 @@ This API is built with FastAPI, sqlmodel and sqlite database. It helps with curr
 - SQLite database is used
 
 # HOW TO RUN
-- Pip install requirements.txt file to install dependencies 
-- uvicorn main:app --reload
-- After initial start-up,you could comment out start up event functions: "create_db_tables() and fetch_data()" to prevent fetch data multiple times
+- pip install requirements.txt file to install dependencies 
+- run command:  uvicorn main:app --reload
+
+# SUGGESTIONS
+- After initial start-up, you could comment out start up event functions: `create_db_tables()` and `fetch_data()` to prevent fetching data multiple times from external service and only run when needed
