@@ -1,7 +1,7 @@
 import datetime
 from typing import Optional
 from pydantic import validator, EmailStr
-from sqlmodel import SQLModel, Field, Relationship
+from sqlmodel import SQLModel, Field
 
 class User(SQLModel, table=True):
     """Create a table to store API registered users"""
@@ -23,7 +23,6 @@ class UserInput(SQLModel):
         if 'password' in values and v != values['password']:
             raise ValueError('passwords don\'t match')
         return v
-
 
 class UserLogin(SQLModel):
     username: str

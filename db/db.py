@@ -1,5 +1,5 @@
 import os
-from sqlmodel import SQLModel, create_engine
+from sqlmodel import create_engine
 from sqlmodel import Session
 
 pwd = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

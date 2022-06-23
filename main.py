@@ -2,14 +2,12 @@ from fastapi import FastAPI
 from db.db import session
 from endpoints.users import user_router
 from endpoints.currencies import converter_router
-from fastapi import APIRouter, Security, security, Depends, Query
+from fastapi import  Depends
 from endpoints.users import auth_handler
 from sqlmodel import select
 from models.currency_models import CurrencySymbol
-from datafetch.currency_repo import select_all_currency
 from create_db import create_db_tables
 from populate_db import fetch_data
-import asyncio
 
 
 app = FastAPI() 
@@ -20,9 +18,6 @@ async def startup_event():
     """ Create sqlite database tables on app start up and attempts to fetch Currency data from API to be loaded into database"""
     create_db_tables()
     await fetch_data()
-
-
-
 
 
 @app.get('/', tags=["Home Page"])
