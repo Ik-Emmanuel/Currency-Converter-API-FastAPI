@@ -22,15 +22,16 @@ async def startup_event():
     await fetch_data()
 
 
-app.include_router(user_router)
 
 
-@app.get('/')
+
+@app.get('/', tags=["Home Page"])
 def home():
     response ={"status": "success", 
     "message": "Welcome to I.K Emmanuel's currency converter 😊. Visit: '/docs' to get started with the documentation",}
     return response
 
+app.include_router(user_router)
 
 @app.get('/symbols', tags=["Get Available Currencies"])
 def get_available_currencies(user = Depends(auth_handler.get_current_user)):
