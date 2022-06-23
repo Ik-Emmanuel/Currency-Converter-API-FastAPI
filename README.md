@@ -9,12 +9,13 @@ This API is built with FastAPI, sqlmodel and sqlite database. It helps with curr
 ## ENDPOINTS
 | METHOD | ROUTE | FUNCTIONALITY |ACCESS|
 | ------- | ----- | ------------- | ------------- |
+| *GET* | ```/``` | _Home_| _All users_|
 | *GET* | ```/docs/``` | _API documentation_| _All users_|
 | *POST* | ```/auth/registration/``` | _Register new user_| _All users_|
 | *POST* | ```/auth/login/``` | _Login user_| _All users_|
 | *GET* | ```/auth/me/``` | _Fetch user profile_|_Authenticated users only_|
 | *POST* | ```/convert/``` | _Convert Currencies_|_Authenticated users only_|
-| *GET* | ```/``` | _Fetch available currencies_|_Authenticated users only_|
+| *GET* | ```/symbols``` | _Fetch available currencies_|_Authenticated users only_|
 
 # USER AUTHENTICATION 
 - JWT  with Bearer Token used for user authentication 

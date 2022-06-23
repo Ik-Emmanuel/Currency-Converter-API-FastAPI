@@ -24,7 +24,15 @@ async def startup_event():
 
 app.include_router(user_router)
 
-@app.get('/', tags=["Get Available Currencies"])
+
+@app.get('/')
+def home():
+    response ={"status": "success", 
+    "message": "Welcome to I.K Emmanuel's currency converter 😊. Visit: '/docs' to get started with the documentation",}
+    return response
+
+
+@app.get('/symbols', tags=["Get Available Currencies"])
 def get_available_currencies(user = Depends(auth_handler.get_current_user)):
     currencies = select(CurrencySymbol)
     currencies = session.exec(currencies).all()
