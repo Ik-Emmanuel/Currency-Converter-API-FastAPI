@@ -14,7 +14,7 @@ def get_rate(symbol:str, date:str=None):
     """ This Function checks for rates from database with date or with date provided"""
     if date:
         try:
-            rate = select(CurrencyRate).where(CurrencyRate.symbol == symbol).where(CurrencyRate.exchange_date <= date)
+            rate = select(CurrencyRate).where(CurrencyRate.symbol == symbol).where(CurrencyRate.exchange_date >= date)
             rate = session.exec(rate).first()
             return (rate.exchange_rate, rate.exchange_date)
         except Exception as e:

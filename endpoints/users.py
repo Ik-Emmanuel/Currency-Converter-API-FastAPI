@@ -23,6 +23,7 @@ def register(user: UserInput):
         - password2: str
         - email: EmailStr  
     """ 
+
     users = select_all_users()
     if any(x.username == user.username for x in users):
         raise HTTPException(status_code=400, detail='Username is taken')

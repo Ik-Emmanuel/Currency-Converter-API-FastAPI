@@ -128,7 +128,7 @@ async def fetch_data() -> None:
         else:
             print("\n\n **************     *************   *************** ")
             print("No data was written to database. Either no new currency record found, or there was a possible error during data fetch")
-    print("Data Load Service Complete!")
+    print(" *** DATA LOAD SERVICE COMPLETE! ***")
 
 
 
