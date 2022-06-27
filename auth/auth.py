@@ -5,8 +5,10 @@ from passlib.context import CryptContext
 import jwt
 from datafetch.users_repo import find_user
 
+
 class AuthHandler:
-    """Authentication handler for generating user access token and identifying authenticated user"""
+    """Authentication handler for generating user access token\
+        and identifying authenticated user"""
 
     security = HTTPBearer()
     pwd_context = CryptContext(schemes=["bcrypt"])

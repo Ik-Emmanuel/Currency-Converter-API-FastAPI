@@ -30,7 +30,8 @@ def register(user: UserInput):
         raise HTTPException(status_code=400, detail="Email is taken")
     hashed_pwd = auth_handler.get_password_hash(user.password)
     try:
-        user = User(username=user.username, password=hashed_pwd, email=user.email)
+        user = User(username=user.username,
+                    password=hashed_pwd, email=user.email)
         session.add(user)
         session.commit()
         registration_response = {
@@ -58,10 +59,12 @@ def login(user: UserLogin):
     """
     user_found = find_user(user.username)
     if not user_found:
-        raise HTTPException(status_code=401, detail="Invalid username and/or password")
+        raise HTTPException(
+            status_code=401, detail="Invalid username and/or password")
     verified = auth_handler.verify_password(user.password, user_found.password)
     if not verified:
-        raise HTTPException(status_code=401, detail="Invalid username and/or password")
+        raise HTTPException(
+            status_code=401, detail="Invalid username and/or password")
     token = auth_handler.encode_token(user_found.username)
     return {"token": token}
 

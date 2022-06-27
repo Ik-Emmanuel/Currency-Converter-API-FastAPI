@@ -8,7 +8,6 @@ pwd = os.path.dirname(os.path.abspath(__file__))
 path_to_file = os.path.join(pwd, "currency_db.sqlite")
 db_exists = os.path.exists(path_to_file)
 
-
 def create_db_tables():
     if not db_exists:
         print("Creating database...")

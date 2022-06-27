@@ -43,7 +43,8 @@ def get_rate(symbol: str, date: str = None):
             return (rate.exchange_rate, rate.exchange_date)
         except Exception:
             return (
-                f"Error fetching rate for currency: {symbol}. Please confirm currency symbol",
+                f"Error fetching rate for currency:\
+                {symbol}. Please confirm currency symbol",
                 None,
             )
 

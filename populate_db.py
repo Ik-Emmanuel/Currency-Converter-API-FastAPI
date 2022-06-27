@@ -81,12 +81,14 @@ def create_exchange_rate(symbol: str, rate: float, date: str):
     symbol = symbol
     rate = rate
     date = date
-    exchange_rate = CurrencyRate(symbol=symbol, exchange_date=date, exchange_rate=rate)
+    exchange_rate = CurrencyRate(
+        symbol=symbol, exchange_date=date, exchange_rate=rate)
     return exchange_rate
 
 
 async def fetch_data() -> None:
-    """Fetch currency data and check for updates before writing data into database"""
+    """Fetch currency data and check for \
+    updates before writing data into database"""
     symbols_results, exchange_rates_results = await get_rates_and_symbols()
     symbols = []
     exchange_rates = []
@@ -109,7 +111,8 @@ async def fetch_data() -> None:
         with Session(engine) as session:
             format = "%Y-%m-%d"
             date = datetime.datetime.strptime(date, format)
-            statement = select(CurrencyRate).where(CurrencyRate.exchange_date == date)
+            statement = select(CurrencyRate).where(
+                CurrencyRate.exchange_date == date)
             date_entry = session.exec(statement).first()
             if not date_entry:
                 exchange_rates = [
@@ -132,5 +135,6 @@ async def fetch_data() -> None:
 
         else:
             print(
-                """No data was written to database. No new records or something went wrong fetching data"""
+                """No data was written to database.\
+                 No new records or something went wrong fetching data"""
             )
