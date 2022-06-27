@@ -1,6 +1,13 @@
 # Currency-Converter-API-FastAPI 
 This API is built with FastAPI, sqlmodel and sqlite database. It helps with currency conversion from one available currency type to another with access to historical currency conversion too
 
+## KEY DEPENDENCIES
+- Python 3.9.9
+- FastAPI
+- Functioning API KEY from `https://apilayer.com/marketplace/fixer-api` 
+    - Either register for a free api key 
+    - use already loaded data in `currency_db.sqlite`
+
 ## EXTERNAL SERVICES 
 - Currency API endpoint : https://apilayer.com/marketplace/fixer-api
 - Currency symbols endpoint: https://api.apilayer.com/fixer/symbols
