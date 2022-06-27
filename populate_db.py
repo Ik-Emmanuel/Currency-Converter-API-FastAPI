@@ -132,5 +132,5 @@ async def fetch_data() -> None:
 
         else:
             print(
-                """\nNo data was written to database. Possible error during data fetch or no new records"""
+                """\nNo data was written to database. No new records or something went wrong fetching data"""
             )

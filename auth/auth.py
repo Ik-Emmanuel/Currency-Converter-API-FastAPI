@@ -5,7 +5,6 @@ from passlib.context import CryptContext
 import jwt
 from datafetch.users_repo import find_user
 
-
 class AuthHandler:
     """Authentication handler for generating user access token and identifying authenticated user"""
 

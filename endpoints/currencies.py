@@ -97,7 +97,7 @@ async def currency_converter(
     converter: CurrencyConvert, user=Depends(auth_handler.get_current_user)
 ):
     """
-    ## Converts currencies given two currency symbols and an amount
+    Converts currencies given two currency symbols and an amount
     This gets converted currency amount if given 2 currency symbols,
     an amount and a date period of format(%YY-%MM-%DD e.g 2022-06-22T00:00:00Z)
 
